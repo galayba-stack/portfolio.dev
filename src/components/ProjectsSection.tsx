@@ -17,54 +17,54 @@ export function ProjectsSection() {
       image: "/portfolio.dev/images/Screenshot1.52.55.png",
       technologies: ["React", "Tailwind CSS", "Nnpm"],
       category: "fullstack",
-      demoUrl: "https://demo.example.com",
-      githubUrl: "https://github.com/example/ecommerce",
+      demoUrl: "https://galayba-stack.github.io/portfolio.dev/",
+      githubUrl: "https://github.com/galayba-stack/portfolio.dev",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "FitCutie",
+      description: "FitCutie is a lightweight, elegant web app designed to make short workouts simple, motivating, and visually pleasant. It focuses on clarity, speed, and ease of use — ideal for users who want to jump into a session without distractions.",
+      image: "/portfolio.dev/images/Screenshot2.44.46.png",
+      technologies: ["TypeScript", "React"],
+      category: "fullstack",
+      demoUrl: "https://galayba-stack.github.io/fitCutie/",
+      githubUrl: "https://github.com/galayba-stack/fitCutie/",
       featured: true
     },
     // {
-    //   id: 2,
-    //   title: "Task Management App",
-    //   description: "A collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
-    //   image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-    //   technologies: ["Next.js", "TypeScript", "Prisma", "Supabase"],
-    //   category: "fullstack",
+    //   id: 3,
+    //   title: "Weather Dashboard",
+    //   description: "A beautiful weather application with location-based forecasts, interactive maps, and weather alerts.",
+    //   image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+    //   technologies: ["Vue.js", "Weather API", "Charts.js"],
+    //   category: "frontend",
     //   demoUrl: "https://demo.example.com",
-    //   githubUrl: "https://github.com/example/taskapp",
-    //   featured: true
+    //   githubUrl: "https://github.com/example/weather",
+    //   featured: false
     // },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, and weather alerts.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      technologies: ["Vue.js", "Weather API", "Charts.js"],
-      category: "frontend",
-      demoUrl: "https://demo.example.com",
-      githubUrl: "https://github.com/example/weather",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "API Analytics Platform",
-      description: "A comprehensive analytics platform for API monitoring, performance tracking, and usage insights.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["Python", "FastAPI", "Redis", "MongoDB"],
-      category: "backend",
-      demoUrl: "https://demo.example.com",
-      githubUrl: "https://github.com/example/analytics",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Portfolio Website",
-      description: "A responsive portfolio website with modern design, smooth animations, and CMS integration.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      category: "frontend",
-      demoUrl: "https://demo.example.com",
-      githubUrl: "https://github.com/example/portfolio",
-      featured: false
-    }
+    // {
+    //   id: 4,
+    //   title: "API Analytics Platform",
+    //   description: "A comprehensive analytics platform for API monitoring, performance tracking, and usage insights.",
+    //   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    //   technologies: ["Python", "FastAPI", "Redis", "MongoDB"],
+    //   category: "backend",
+    //   demoUrl: "https://demo.example.com",
+    //   githubUrl: "https://github.com/example/analytics",
+    //   featured: false
+    // },
+    // {
+    //   id: 6,
+    //   title: "Portfolio Website",
+    //   description: "A responsive portfolio website with modern design, smooth animations, and CMS integration.",
+    //   image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+    //   technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    //   category: "frontend",
+    //   demoUrl: "https://demo.example.com",
+    //   githubUrl: "https://github.com/example/portfolio",
+    //   featured: false
+    // }
   ];
 
   const categories = [
@@ -211,7 +211,7 @@ export function ProjectsSection() {
                     <ImageWithFallback
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-40 object-cover"
+                      className="w-full h-40 object-cover rounded-xl"
                     />
                   </div>
                   <CardHeader className="pb-2">
