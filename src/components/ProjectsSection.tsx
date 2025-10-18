@@ -26,9 +26,9 @@ export function ProjectsSection() {
       title: "FitCutie",
       description: "FitCutie is a lightweight, elegant web app designed to make short workouts simple, motivating, and visually pleasant. It focuses on clarity, speed, and ease of use — ideal for users who want to jump into a session without distractions.",
       image: "/portfolio.dev/images/Screenshot2.44.46.png",
-      technologies: ["TypeScript", "React"],
-      category: "fullstack",
-      demoUrl: "https://galayba-stack.github.io/fitCutie/",
+      technologies: ["TypeScript", "React Native", "Node.js", "Expo Go"],
+      category: "mobile",
+      demoUrl: "https://expo.dev/preview/update?message=Configure+package.json&updateRuntimeVersion=1.0.0&createdAt=2025-10-18T16%3A33%3A51.638Z&slug=exp&projectId=eecad3a5-09d8-4c49-8051-826d00de63ac&group=1bf2e878-0cd7-4e27-af82-8565b249b171",
       githubUrl: "https://github.com/galayba-stack/fitCutie/",
       featured: true
     },
