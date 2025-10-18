@@ -77,7 +77,7 @@ export function HeroSection() {
 
               {/* Фото */}
               <ImageWithFallback
-                  src="/images/Image (4).jpeg"
+                  src="/images/image-4.jpeg"
                   alt="Profile picture"
                   className="w-full h-full object-cover rounded-full"
               />
