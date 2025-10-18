@@ -14,7 +14,7 @@ export function ProjectsSection() {
       id: 1,
       title: "This portfolio",
       description: "Upgrade my personal portfolio from html/css/js to React with Tailwind.",
-      image: "/images/Screenshot1.52.55.png",
+      image: "/portfolio.dev/images/Screenshot1.52.55.png",
       technologies: ["React", "Tailwind CSS", "Nnpm"],
       category: "fullstack",
       demoUrl: "https://demo.example.com",
