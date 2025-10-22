@@ -103,7 +103,20 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="relative py-20 bg-muted/30">
+      <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 z-10 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center text-center text-white rounded-2xl"
+      >
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-2">
+          🛠️ Section in Progress
+        </h2>
+        <p className="text-lg text-gray-200 max-w-xl">
+          New projects are currently being added. Please check back soon!
+        </p>
+      </motion.div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
