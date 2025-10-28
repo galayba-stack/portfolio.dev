@@ -52,7 +52,7 @@ export function ExperienceSection() {
       school: "University Merito",
       location: "Bydgoszcz, Poland",
       period: "2022 - 2025",
-      description: "Graduated Magna Cum Laude. Focused on software engineering, data structures, and algorithms.",
+      description: "",
       achievements: [
         "GPA: 5.0/5.0"
       ]

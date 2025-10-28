@@ -59,7 +59,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-1 lg:gap-12 items-center">
             <motion.div
                 className="relative w-40 h-40 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl mx-auto
 "
@@ -124,7 +124,7 @@ export function HeroSection() {
               </div>
 
               <motion.p
-                  className="text-base sm:text-lg text-muted-foreground mb-8 max-w-xl lg:max-w-none leading-relaxed"
+                  className="text-base sm:text-lg text-muted-foreground mb-4 lg:mb-8 max-w-xl lg:max-w-none leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
@@ -136,7 +136,7 @@ export function HeroSection() {
 
               {/* Stats */}
               <motion.div
-                  className="grid grid-cols-3 sm:grid-cols-3 gap-1 mb-10"
+                  className="grid grid-cols-3 sm:grid-cols-3 gap-1 mb-5 lg:mb-10"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
