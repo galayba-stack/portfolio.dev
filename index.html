@@ -9,6 +9,16 @@
     <script type="module" crossorigin src="/portfolio.dev/assets/index-BSrvL5f9.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio.dev/assets/index-Dgkb7qGR.css">
   </head>
+  <script>
+      (function () {
+          try {
+              const key = "portfolio-theme";
+              const saved = localStorage.getItem(key);
+              const theme = saved || "dark";
+              document.documentElement.classList.toggle("dark", theme === "dark");
+          } catch (e) {}
+      })();
+  </script>
   <body>
     <div id="root"></div>
   </body>
