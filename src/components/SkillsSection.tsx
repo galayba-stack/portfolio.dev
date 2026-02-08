@@ -13,7 +13,7 @@ export function SkillsSection() {
         { name: "React/Next.js", level: 75 },
         { name: "TypeScript", level: 70 },
         { name: "Tailwind CSS", level: 80 },
-        { name: "Vue.js", level: 50 }
+        { name: "JS", level: 90 }
       ]
     },
     {
@@ -31,7 +31,7 @@ export function SkillsSection() {
         { name: "WordPress", level: 85 },
         { name: "WooCommerce", level: 90 },
         { name: "PrestaShop", level: 75 },
-        { name: "Twig", level: 80 }
+        { name: "Strapi", level: 80 }
       ]
     },
     {
@@ -39,8 +39,9 @@ export function SkillsSection() {
       skills: [
         { name: "Git", level: 95 },
         { name: "Postman", level: 95 },
-        { name: "CI/CD", level: 80 },
-        { name: "Figma", level: 65 }
+        { name: "Canva", level: 80 },
+        { name: "Figma", level: 65 },
+          { name: "Filezila", level: 95 }
       ]
     }
   ];

@@ -7,17 +7,20 @@ export function Footer() {
     {
       icon: <Github className="h-5 w-5" />,
       href: "https://github.com/galayba-stack/",
-      label: "GitHub"
+      label: "GitHub",
+        track: "github",
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       href: "https://www.linkedin.com/in/olha-h-dev/",
+        track: "linkedin",
       label: "LinkedIn"
     },
     {
       icon: <Mail className="h-5 w-5" />,
       href: "mailto:galayba.work@gmail.com",
-      label: "Email"
+      label: "Email",
+        track: "mail",
     }
   ];
 
@@ -38,6 +41,7 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track={social.track}
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 aria-label={social.label}
               >

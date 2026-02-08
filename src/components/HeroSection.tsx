@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ImageWithFallback } from "./figma/ImageWithFallback.tsx";
 import { useState, useEffect } from "react";
 import { BubbleBackground } from "./ui/shadcn-io/bubble-background";
+import { track } from "../lib/analytics";
+
 
 
 // import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -77,7 +79,7 @@ export function HeroSection() {
 
               {/* Фото */}
               <ImageWithFallback
-                  src="/portfolio.dev/images/image1.jpeg"
+                  src="/portfolio.dev/images/image1.webp"
                   alt="Profile picture"
                   className="w-full h-full object-cover rounded-full"
               />
@@ -129,9 +131,11 @@ export function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
               >
-                I craft <span className="font-semibold text-blue-600 dark:text-blue-400">modern front-end interfaces</span> and build
-                <span className="font-semibold text-purple-600 dark:text-purple-400"> powerful backend systems</span> using technologies like React, Laravel, and Next.js,
-                and WordPress — with a strong  <span className="font-semibold text-purple-600 dark:text-purple-400"> focus on SEO</span> and performance optimization.
+                  I deliver <span className="font-semibold text-blue-600 dark:text-blue-400">end-to-end web solutions</span> using React, Laravel, PHP,
+                  and WordPress — combining <span className="font-semibold text-purple-600 dark:text-purple-400">strong front-end development</span> with
+                  <span className="font-semibold text-purple-600 dark:text-purple-400"> practical back-end experience</span>,
+                  <span className="font-semibold text-purple-600 dark:text-purple-400"> API integration</span>, and
+                  <span className="font-semibold text-purple-600 dark:text-purple-400"> performance optimization</span>.
               </motion.p>
 
               {/* Stats */}
@@ -156,43 +160,57 @@ export function HeroSection() {
               </motion.div>
 
               {/* Buttons */}
-              <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center mb-10"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-              >
-                <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 shadow-md hover:scale-105 transition-transform mr-0 sm:mr-5"
-                    onClick={() => handleScroll("projects")}
+                <motion.div
+                    className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center mb-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
                 >
-                  Explore Work
-                </Button>
-                <Button
-                    variant="outline"
-                    size="lg"
-                    className="px-8 font-semibold border hover:border-blue-500 hover:text-blue-500 transition-colors ml-0  sm:ml-5"
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  Get Resume
-                </Button>
-              </motion.div>
+                    {/* Explore */}
+                    <Button
+                        data-track="explore_work"
+                        size="lg"
+                        className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold px-8 shadow-md hover:scale-105 transition-transform"
+                        onClick={() => handleScroll("projects")}
+                    >
+                        Explore Work
+                    </Button>
 
-              {/* Social Links */}
+                    {/* Resume */}
+                    <Button
+                        asChild
+                        variant="outline"
+                        size="lg"
+                        className="w-full sm:w-auto px-8 font-semibold border hover:border-blue-500 hover:text-blue-500 transition-colors"
+                    >
+                        <a
+                            href="/portfolio.dev/Resume.pdf"
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-track="resume_download"
+                            onClick={() => track("download_resume")}
+                        >
+                            <Download className="mr-2 h-4 w-4" />
+                            Get Resume
+                        </a>
+                    </Button>
+                </motion.div>
+
+                {/* Social Links */}
               <motion.div
                   className="flex justify-center lg:justify-center space-x-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
               >
-                <a href="https://github.com/galayba-stack/" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/galayba-stack/"  data-track="github" target="_blank" rel="noopener noreferrer">
                   <Github className="hover:text-blue-600 transition-transform hover:scale-110" />
                 </a>
-                <a href="https://www.linkedin.com/in/olha-h-dev/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/olha-h-dev/" data-track="linkedin" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="hover:text-blue-700 transition-transform hover:scale-110" />
                 </a>
-                <a href="mailto:galayba.work@gmail.com">
+                <a href="mailto:galayba.work@gmail.com" data-track="mail">
                   <Mail className="hover:text-red-500 transition-transform hover:scale-110" />
                 </a>
               </motion.div>

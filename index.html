@@ -7,6 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
     <title>Olha H.</title>
   </head>
+  <script>
+      (function () {
+          try {
+              const key = "portfolio-theme";
+              const saved = localStorage.getItem(key);
+              const theme = saved || "dark";
+              document.documentElement.classList.toggle("dark", theme === "dark");
+          } catch (e) {}
+      })();
+  </script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

@@ -22,6 +22,7 @@ import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
+import { track } from "../lib/analytics";
 
 
 
@@ -37,7 +38,8 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
+      // klik w "Send" (intencja)
+      track("click", { name: "contact_submit" });
     emailjs
         .send(
             'service_r1hy2z7',
@@ -46,10 +48,16 @@ export function ContactSection() {
             'DThcuhMVnoER6zHcE'
         )
         .then(() => {
+            // sukces
+            track("click", { name: "contact_submit_success" });
           setShowSuccess(true);
           setFormData({ name: "", email: "", subject: "", message: "" });
         })
         .catch((error) => {
+            track("click", {
+                name: "contact_submit_error",
+                message: String(error?.message ?? "unknown"),
+            });
           console.error("EmailJS error:", error);
           alert("Something went wrong. Please try again.");
         });
@@ -69,19 +77,24 @@ export function ContactSection() {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
       value: "galayba.work@gmail.com",
-      href: "mailto:galayba.work@gmail.com"
+      href: "mailto:galayba.work@gmail.com",
+        track: "contact_email"
+
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Phone",
-      value: "Secure",
-      href: ""
+        value: "+1 (825) 582-1516",
+        href: "tel:+18255821516",
+        track: "contact_phone"
+
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Based in",
       value: "Edmonton, Canada",
-      href: "#"
+      href: "#",
+        track: "contact_location"
     }
   ];
 
@@ -90,13 +103,15 @@ export function ContactSection() {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
       href: "https://github.com/galayba-stack/",
-      username: "@galayba-stack"
+      username: "@galayba-stack",
+        track: "contact_github"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/olha-h-dev/",
-      username: "Olha Halaiba"
+      username: "Olha Halaiba",
+        track: "contact_linkedin"
     },
     // {
     //   icon: <Twitter className="h-5 w-5" />,
@@ -247,6 +262,7 @@ export function ContactSection() {
                           key={index}
                           href={item.href}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors duration-200 group"
+                          data-track={item.track}
                           whileHover={{ x: 5 }}
                       >
                         <div className="flex-shrink-0 p-2 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-lg group-hover:shadow-lg">
@@ -276,6 +292,7 @@ export function ContactSection() {
                           href={profile.href}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-track={profile.track}
                           className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors duration-200 group"
                           whileHover={{ x: 5 }}
                       >

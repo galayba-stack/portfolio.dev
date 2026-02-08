@@ -3,6 +3,7 @@ import { Badge } from "./ui/badge.tsx";
 import { motion } from "framer-motion";
 import { Code, Database, Zap } from "lucide-react";
 
+
 export function AboutSection() {
   const expertise = [
     {
@@ -59,7 +60,10 @@ export function AboutSection() {
               Who I Am
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
-              I'm a software developer focused on building impactful digital products. With a solid understanding of modern tools and frameworks, I translate ideas into functional, elegant applications.
+                I'm a Full-Stack / Front-End Developer focused on building responsive,
+                high-performance web applications. With a strong front-end foundation
+                and practical back-end experience, I turn ideas into clean,
+                scalable, and user-focused digital solutions.
             </p>
           </motion.div>
 
@@ -74,14 +78,19 @@ export function AboutSection() {
               <h3 className="text-2xl font-semibold mb-6">My Background</h3>
               <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
                 <p>
-                  My path into development began with curiosity and creativity. Over the years, I've grown from building basic sites to delivering fully interactive web applications and managing backend systems.
+                    I specialize in building clean, responsive front-end interfaces
+                    and integrating them with reliable back-end systems.
                 </p>
                 <p>
-                  I enjoy combining clean UI design with solid backend logic. Whether it’s a solo project or a team collaboration, I always aim to write maintainable and scalable code.
-                </p>
+                    On the back end, I work with Laravel and PHP to build RESTful APIs,
+                    handle complex business logic, and integrate subscription and
+                    payment flows. I have experience working with large,
+                    production-scale databases, focusing on data integrity,
+                    performance, and scalability. </p>
                 <p>
-                  Outside of work, I’m constantly learning — exploring new technologies, contributing to open source, or improving development workflows.
-                </p>
+                    In addition, I work extensively with WordPress,WooCommerce and Strapi,
+                    developing custom solutions with a strong focus on SEO,
+                    performance optimization, and accessibility.</p>
               </div>
 
               <div className="mt-8">
@@ -89,7 +98,7 @@ export function AboutSection() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     'React', 'Next.js', 'TypeScript',
-                    'PHP', 'Angular', 'Vue',
+                    'PHP', 'Strapi', 'Vue',
                     'JS', 'Laravel'
                   ].map((item) => (
                       <Badge key={item} variant="secondary">
