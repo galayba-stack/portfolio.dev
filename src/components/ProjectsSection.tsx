@@ -783,6 +783,7 @@ export function ProjectsSection() {
                                     <Button variant="outline" onClick={() => setActiveProject(null)}>
                                         Close
                                     </Button>
+                                    
                                 </div>
 
                             </div>
