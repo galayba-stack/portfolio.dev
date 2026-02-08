@@ -572,113 +572,6 @@ export function ProjectsSection() {
                     ))}
                 </div>
 
-                {/* HEADER */}
-                {/*<div className="text-center mb-16">*/}
-                {/*    <h2 className="text-3xl sm:text-4xl mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">*/}
-                {/*        Featured Projects*/}
-                {/*    </h2>*/}
-                {/*    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">*/}
-                {/*        A showcase of my recent work, demonstrating various technologies and problem-solving approaches.*/}
-                {/*    </p>*/}
-                {/*</div>*/}
-                {/* FEATURED */}
-                {/*<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">*/}
-                {/*    {featuredProjects.map(project => (*/}
-                {/*        <Card*/}
-                {/*            key={project.id}*/}
-                {/*            className="group overflow-hidden hover:shadow-xl transition-all duration-300 bg-background"*/}
-                {/*        >*/}
-                {/*            /!* IMAGE *!/*/}
-                {/*            <div className="relative overflow-hidden">*/}
-                {/*                <ImageWithFallback*/}
-                {/*                    src={project.image}*/}
-                {/*                    alt={project.title}*/}
-                {/*                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"*/}
-                {/*                />*/}
-
-                {/*                /!* HOVER OVERLAY *!/*/}
-                {/*                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">*/}
-                {/*                    {project.demoUrl && (*/}
-                {/*                        <Button size="sm" variant="secondary" asChild>*/}
-                {/*                            <a*/}
-                {/*                                href={project.demoUrl}*/}
-                {/*                                target="_blank"*/}
-                {/*                                rel="noopener noreferrer"*/}
-                {/*                            >*/}
-                {/*                                <Eye className="h-4 w-4 mr-2" />*/}
-                {/*                                Demo*/}
-                {/*                            </a>*/}
-                {/*                        </Button>*/}
-                {/*                    )}*/}
-
-                {/*                    {project.githubUrl && (*/}
-                {/*                        <Button size="sm" variant="secondary" asChild>*/}
-                {/*                            <a*/}
-                {/*                                href={project.githubUrl}*/}
-                {/*                                target="_blank"*/}
-                {/*                                rel="noopener noreferrer"*/}
-                {/*                            >*/}
-                {/*                                <Github className="h-4 w-4 mr-2" />*/}
-                {/*                                Code*/}
-                {/*                            </a>*/}
-                {/*                        </Button>*/}
-                {/*                    )}*/}
-                {/*                </div>*/}
-                {/*            </div>*/}
-
-                {/*            /!* CONTENT *!/*/}
-                {/*            <CardHeader>*/}
-                {/*                <CardTitle>{project.title}</CardTitle>*/}
-                {/*                <CardDescription className="line-clamp-3">*/}
-                {/*                    {project.description}*/}
-                {/*                </CardDescription>*/}
-                {/*            </CardHeader>*/}
-
-                {/*            <CardContent className="mt-auto">*/}
-                {/*                /!* TECHNOLOGIES *!/*/}
-                {/*                <div className="flex flex-wrap gap-1 mb-3">*/}
-                {/*                    {project.technologies.map(tech => (*/}
-                {/*                        <Badge key={tech} variant="secondary" className="text-xs">*/}
-                {/*                            {tech}*/}
-                {/*                        </Badge>*/}
-                {/*                    ))}*/}
-                {/*                </div>*/}
-
-                {/*                /!* ACTIONS *!/*/}
-                {/*                {!project.isPrivate && (*/}
-                {/*                    <div className="flex gap-2">*/}
-                {/*                        {project.demoUrl && (*/}
-                {/*                            <Button size="sm" variant="outline" className="flex-1" asChild>*/}
-                {/*                                <a*/}
-                {/*                                    href={project.demoUrl}*/}
-                {/*                                    target="_blank"*/}
-                {/*                                    rel="noopener noreferrer"*/}
-                {/*                                >*/}
-                {/*                                    <ExternalLink className="h-3 w-3 mr-1" />*/}
-                {/*                                    Demo*/}
-                {/*                                </a>*/}
-                {/*                            </Button>*/}
-                {/*                        )}*/}
-
-                {/*                        {project.githubUrl && (*/}
-                {/*                            <Button size="sm" variant="outline" className="flex-1" asChild>*/}
-                {/*                                <a*/}
-                {/*                                    href={project.githubUrl}*/}
-                {/*                                    target="_blank"*/}
-                {/*                                    rel="noopener noreferrer"*/}
-                {/*                                >*/}
-                {/*                                    <Github className="h-3 w-3 mr-1" />*/}
-                {/*                                    Code*/}
-                {/*                                </a>*/}
-                {/*                            </Button>*/}
-                {/*                        )}*/}
-                {/*                    </div>*/}
-                {/*                )}*/}
-                {/*            </CardContent>*/}
-                {/*        </Card>*/}
-                {/*    ))}*/}
-                {/*</div>*/}
-
             </div>
 
             {/* MODAL */}
@@ -783,7 +676,7 @@ export function ProjectsSection() {
                                     <Button variant="outline" onClick={() => setActiveProject(null)}>
                                         Close
                                     </Button>
-                                    
+
                                 </div>
 
                             </div>
