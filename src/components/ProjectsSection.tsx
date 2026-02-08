@@ -277,6 +277,42 @@ export function ProjectsSection() {
             }
         },
         {
+            id: 30,
+            title: "HandMade Shop – UI / UX Design",
+            description:
+                "UI/UX design for a handmade e-commerce shop. The project focuses on clean visual identity, product presentation, and a warm, craft-oriented aesthetic.",
+            category: "design",
+            type: "design",
+            technologies: ["Figma", "UI/UX Design", "Visual Identity"],
+            featured: false,
+
+            designUrl:
+                "https://www.figma.com/design/wNJ0i6UGg3yDVtw4Ea7qct/HandMade-Shop",
+
+            images: [
+                "/portfolio.dev/images/design/handmade-1.png",
+                "/portfolio.dev/images/design/handmade-2.png",
+                "/portfolio.dev/images/design/handmade-3.png",
+                "/portfolio.dev/images/design/handmade-4.png"
+            ],
+
+            caseStudy: {
+                responsibilities: [
+                    "Created full UI/UX design for an e-commerce website",
+                    "Designed product pages, homepage, and navigation",
+                    "Focused on usability, hierarchy, and visual consistency",
+                    "Prepared layouts for future frontend implementation"
+                ],
+                highlights: [
+                    "Warm, craft-oriented visual identity",
+                    "Clear product presentation",
+                    "Design ready for frontend handoff",
+                    "Scalable layout system"
+                ]
+            }
+        }
+        ,
+        {
             id: 13,
             title: "Foundation Website – Visual Accessibility",
             description:
@@ -368,6 +404,7 @@ export function ProjectsSection() {
         { id: "fullstack", label: "Full Stack" },
         { id: "frontend", label: "Frontend" },
         { id: "backend", label: "Backend" },
+        { id: "design", label: "Design" },
         { id: "mobile", label: "Mobile" }
     ];
 
@@ -461,15 +498,16 @@ export function ProjectsSection() {
                             key={project.id}
                             className={`h-full flex flex-col transition ${project.isPrivate ? "hover:ring-2 hover:ring-purple-500 cursor-pointer" : ""
                                 }`}
-                            onClick={() => project.isPrivate && setActiveProject(project)}
+                            onClick={() => (project.isPrivate || project.type === "design") && setActiveProject(project)}
                         >
                             {/* IMAGE */}
                             <div className="relative overflow-hidden rounded-t-2xl">
                                 <ImageWithFallback
-                                    src={project.image}
+                                    src={project.image ?? project.images?.[0]}
                                     alt={project.title}
                                     className="w-full h-40 object-cover"
                                 />
+
                             </div>
 
                             <CardHeader className="pb-2">
@@ -498,7 +536,8 @@ export function ProjectsSection() {
                                 </div>
 
                                 {/* ACTIONS */}
-                                {!project.isPrivate ? (
+                                {/* ACTIONS */}
+                                {!project.isPrivate && project.type !== "design" ? (
                                     <div className="flex gap-2">
                                         {project.demoUrl && (
                                             <Button size="sm" variant="outline" className="flex-1" asChild>
@@ -527,6 +566,7 @@ export function ProjectsSection() {
                                         View case study
                                     </Button>
                                 )}
+
                             </CardContent>
                         </Card>
                     ))}
@@ -659,11 +699,25 @@ export function ProjectsSection() {
                             onClick={e => e.stopPropagation()}
                         >
                             <div className="relative">
-                                <img
-                                    src={activeProject.image}
-                                    alt={activeProject.title}
-                                    className="w-full h-64 object-cover"
-                                />
+                                {activeProject.images?.length ? (
+                                    <div className="grid gap-3 p-4 sm:p-6">
+                                        {activeProject.images.map((img: string, i: number) => (
+                                            <img
+                                                key={i}
+                                                src={img}
+                                                alt={`${activeProject.title} design ${i + 1}`}
+                                                className="w-full rounded-xl object-cover"
+                                            />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <img
+                                        src={activeProject.image}
+                                        alt={activeProject.title}
+                                        className="w-full h-64 object-cover"
+                                    />
+                                )}
+
                                 <button
                                     onClick={() => setActiveProject(null)}
                                     className="absolute top-4 right-4 bg-black/60 text-white p-2 rounded-full"
@@ -695,33 +749,42 @@ export function ProjectsSection() {
                                     </div>
                                 </div>
 
-                                <div>
-                                    <h4 className="font-semibold mb-1">What I worked on</h4>
-                                    <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                                        {activeProject.caseStudy.responsibilities.map(
-                                            (item: string, idx: number) => (
+                                {activeProject.caseStudy?.responsibilities?.length ? (
+                                    <div>
+                                        <h4 className="font-semibold mb-1">What I worked on</h4>
+                                        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                                            {activeProject.caseStudy.responsibilities.map((item: string, idx: number) => (
                                                 <li key={idx}>{item}</li>
-                                            )
-                                        )}
-                                    </ul>
-                                </div>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) : null}
 
-                                <div>
-                                    <h4 className="font-semibold mb-1">Project highlights</h4>
-                                    <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
-                                        {activeProject.caseStudy.highlights.map(
-                                            (item: string, idx: number) => (
+                                {activeProject.caseStudy?.highlights?.length ? (
+                                    <div>
+                                        <h4 className="font-semibold mb-1">Project highlights</h4>
+                                        <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                                            {activeProject.caseStudy.highlights.map((item: string, idx: number) => (
                                                 <li key={idx}>{item}</li>
-                                            )
-                                        )}
-                                    </ul>
-                                </div>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) : null}
 
-                                <div className="flex justify-end">
+
+                                <div className="flex flex-wrap justify-end gap-2">
+                                    {activeProject.designUrl && (
+                                        <Button asChild variant="outline">
+                                            <a href={activeProject.designUrl} target="_blank" rel="noopener noreferrer">
+                                                Open in Figma
+                                            </a>
+                                        </Button>
+                                    )}
                                     <Button variant="outline" onClick={() => setActiveProject(null)}>
                                         Close
                                     </Button>
                                 </div>
+
                             </div>
                         </motion.div>
                     </motion.div>
