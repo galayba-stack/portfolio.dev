@@ -49,7 +49,7 @@ export function ProjectsSection() {
             category: "fullstack",
             demoUrl: "https://galayba-stack.github.io/dashboard/#/",
             githubUrl: "https://github.com/galayba-stack/dashboard",
-            featured: true
+            featured: false
         },
         {
             id: 3,
@@ -132,7 +132,7 @@ export function ProjectsSection() {
                 "Database"
             ],
             category: "backend",
-            featured: false,
+            featured: true,
             isPrivate: true,
             isWorkProject: true,
             caseStudy: {
