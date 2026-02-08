@@ -536,11 +536,32 @@ export function ProjectsSection() {
                                 </div>
 
                                 {/* ACTIONS */}
-                                {/* ACTIONS */}
-                                {!project.isPrivate && project.type !== "design" ? (
+                                {project.type === "design" ? (
+                                    <Button
+                                        size="sm"
+                                        variant="outline"
+                                        className="w-full"
+                                        asChild
+                                        onClick={e => e.stopPropagation()}
+                                    >
+                                        <a
+                                            href={project.designUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Open in Figma
+                                        </a>
+                                    </Button>
+                                ) : !project.isPrivate ? (
                                     <div className="flex gap-2">
                                         {project.demoUrl && (
-                                            <Button size="sm" variant="outline" className="flex-1" asChild>
+                                            <Button
+                                                size="sm"
+                                                variant="outline"
+                                                className="flex-1"
+                                                asChild
+                                                onClick={e => e.stopPropagation()}
+                                            >
                                                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                                                     <ExternalLink className="h-3 w-3 mr-1" />
                                                     Demo
@@ -548,7 +569,13 @@ export function ProjectsSection() {
                                             </Button>
                                         )}
                                         {project.githubUrl && (
-                                            <Button size="sm" variant="outline" className="flex-1" asChild>
+                                            <Button
+                                                size="sm"
+                                                variant="outline"
+                                                className="flex-1"
+                                                asChild
+                                                onClick={e => e.stopPropagation()}
+                                            >
                                                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                                     <Github className="h-3 w-3 mr-1" />
                                                     Code
@@ -557,17 +584,12 @@ export function ProjectsSection() {
                                         )}
                                     </div>
                                 ) : (
-                                    <Button
-                                        size="sm"
-                                        variant="outline"
-                                        className="w-full"
-                                        onClick={() => setActiveProject(project)}
-                                    >
+                                    <Button size="sm" variant="outline" className="w-full">
                                         View case study
                                     </Button>
                                 )}
-
                             </CardContent>
+
                         </Card>
                     ))}
                 </div>
